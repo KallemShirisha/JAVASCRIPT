@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="C:\Users\RAMANA\Downloads\bootstrap-4.5.2-dist\css\bootstrap.min.css">
+        <title>Document</title>
+        <style>
+            
+			 body{  
+			 background-image: url("currency.jpg"); 
+					 background-repeat: no-repeat; 
+					 background-size: 1600px 810px; 
+				
+			
+		
+		}  
+         #field1,#field2{ 
+             background-color:pink; 
+         } 
+         #id1{ 
+             color:red; 
+             font-weight:10px; 
+        }
+         </style> 
+        <script>
+            function converter(){
+                var x=document.getElementById("field1").value;
+                var y=document.getElementById("field2").value;
+               switch(x){
+                case "Indian Rupee": Rupee(y);
+                        break;
+                    case "Canadian Dollar":   Dollar(y);
+                        break;
+                    case "Russian Rubble":Rubble(y);
+                            break;
+                    case "Austria Euro":Euro(y);
+                            break;
+               }
+            }
+            function Rupee(y){
+                x=parseFloat(document.getElementById("input1").value);
+                switch(y){
+                    case "Indian Rupee":document.getElementById("input2").value=x;
+                        break;
+                    case "Canadian Dollar":document.getElementById("input2").value=(x*0.018);
+                        break;
+                    case "Russian Rubble":document.getElementById("input2").value=(x*1.03);
+                            break;
+                    case "Austria Euro":document.getElementById("input2").value=(x*0.012);
+                            break;
+                }
+            }
+            function Dollar(y){
+                x=parseFloat(document.getElementById("input1").value);
+                switch(y){
+                    case "Indian Rupee":document.getElementById("input2").value=(x*56.07);
+                        break;
+                    case "Canadian Dollar":document.getElementById("input2").value=(x);
+                        break;
+                    case "Russian Rubble":document.getElementById("input2").value=(x*57.69);
+                            break;
+                    case "Austria Euro":document.getElementById("input2").value=(x*0.64691);
+                            break;
+                }
+            }
+            function Rubble(y){
+                x=parseFloat(document.getElementById("input1").value);
+                switch(y){
+                    case "Indian Rupee":document.getElementById("input2").value=(x*0.97);
+                        break;
+                    case "Canadian Dollar":document.getElementById("input2").value=(x*0.017);
+                        break;
+                    case "Russian Rubble":document.getElementById("input2").value=(x);
+                            break;
+                    case "Austria Euro":document.getElementById("input2").value=(x*13.7603);
+                            break;
+                }
+            }
+            function Euro(y){
+                x=parseFloat(document.getElementById("input1").value);
+                switch(y){
+                    case "Indian Rupee":document.getElementById("input2").value=(x*86.75760);
+                        break;
+                    case "Canadian Dollar":document.getElementById("input2").value=(x*1.5458);
+                        break;
+                    case "Russian Rubble":document.getElementById("input2").value=(x*13.7603);
+                            break;
+                    case "Austria Euro":document.getElementById("input2").value=(x);
+                            break;
+                }
+            }
+    </script>
+    </head>
+    <body>
+        
+        <div class="container text-center mx-auto">
+            <div class="display-4" id="id1">Currency Converter</div>
+            <div class="row">
+                <div class="col-4 text-center mx-auto mt-5">
+                    <select id="field1" class="form-control mb-3">
+                        <option>Select From Currency</option>
+                        <option>Indian Rupee</option>
+                        <option>Canadian Dollar</option>
+                        <option>Russian Rubble</option>
+                        <option>Austria Euro</option>
+                    </select>
+                    <input type="number" class="form-control mb-3" id="input1" placeholder="Enter the value">
+                    <select id="field2" class="form-control mb-3">
+                        <option>Select To Currency</option>
+                        <option>Indian Rupee</option>
+                        <option>Canadian Dollar</option>
+                        <option>Russian Rubble</option>
+                        <option>Austria Euro</option>
+                    </select>
+                   
+                    
+                    <input type="button" class="btn btn-success" value="see result" onclick="converter()"><br>
+                    <input type="number" class="form-control mb-3" id="input2"  placeholder="After conversion...">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
